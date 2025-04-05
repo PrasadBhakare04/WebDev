@@ -1,0 +1,20 @@
+.card {
+    width: 210px;
+    border-color: grey;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    text-align: center;
+}
+
+.card img {
+    /*padding-top: 20px;*/
+    width: 200px;
+    border: rgb(236, 183, 191) solid;
+    border-radius: 50%;
+    border-width: 5px;
+}
+
+div {
+    margin: 50px;
+}

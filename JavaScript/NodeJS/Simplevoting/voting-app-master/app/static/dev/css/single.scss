@@ -1,0 +1,179 @@
+@import "utils/navbar.scss";
+@import "utils/checkboxes.scss";
+@import "utils/buttons.scss";
+@import "utils/modal.scss";
+
+.single {
+  display: block;
+
+  & .allcharts {
+    display:block; 
+    margin-top:20px;   
+    padding: 0 20px 0 20px;
+    
+    & .charts{
+      display: inline-block;
+      float: left;
+      position:relative;
+      width: 70%; 
+
+      & canvas{
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+    }
+  }
+}
+
+//====OPTION FORM============================
+.options{
+  display: block;
+  float: left;
+  padding-bottom: 20px;
+  padding-top: 50px;
+  width: 30%;
+}
+
+.optionlist{
+  padding-left: 20px;
+}
+
+
+//====DIV CONTAINING THE ADD OPTION TO CHART MENU========
+.addoptionval{
+  padding-left: 15px;
+
+  //====RADIO BUTTON TO ENSURE THAT ADD OPTION OR ONE OF=== 
+  //====THE EXISTING OPTIONS HAVE TO BE SELECTED===========
+  & input.radio, & input[type="radio"]{
+    height: 0;
+    width: 0;
+    visibility: none;
+
+    //====LABEL SIBLING===================================
+    & + label{
+      transition: color 0.3s ease-in;
+
+      //====DIV CONTAINING INPUT TEXT FIELD===============
+      & .addoptioncontain{
+        height: auto;
+      }
+
+      //====WRAPPER TO USE BEFORE ELEMENT=================
+      & .addwrapper{
+        display: inline-block;
+        height: auto;
+        max-width: 300px;
+        position: relative;
+        width: 90%;
+
+        //====RED LINE===============================
+        &:before{
+          @include pseudo;
+          background: $reallydarkred;
+          height: 1px;
+          top: 90%;
+          transition: height 0.3s ease-in;
+          z-index: 0;
+        }
+
+        &:hover{
+          &:before{
+            height: 3px;
+          }
+        }
+      }
+
+      //====INPUT TEXT FIELD====================
+      & .addoption{
+        @include nopad;
+        background: $charcoal;
+        border: none;
+        color: #FFF;
+        display: inline-block;
+        font-family: $sans;
+        font-size: 1.4em;
+        height: 0;
+        transition: height 0.3s ease-in;
+        width: 100%;
+
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+
+    //====HOVER ANIMATION==========================
+    &:hover +  label{
+      color: $reallydarkred;
+      & .addwrapper{
+        &:before{
+          height: 3px;
+        }
+      }
+    }
+
+    //====OPEN UP WHEN ADD OPTION CLICKED=========
+    &:checked + label{
+      color: $reallydarkred;
+
+      & .addwrapper{
+        &:before{
+          height: 3px;
+        }
+      }
+
+      & .addoption {
+        height: 2em;
+      }
+    }
+  }
+}
+
+//====INITIAL STATES FOR ADD-OPTION=========================
+.addoptioncontain{
+  height: 2em;
+
+  & .addoption{
+    margin: 10px 0 0 0;
+    display: block;
+  }
+}
+
+.submitwrapper{
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+@media(max-width: 924px){
+  .single{
+
+    & .allcharts{
+      text-align: center;
+
+      & .charts{
+        width: 99%;
+
+        & canvas:hover{
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .options{
+    @include nopad;
+    padding: 50px 0 100px 30px;
+    position: relative;
+    text-align: left;
+    width: 80%;
+
+    ul{
+      @include nopad;
+    }
+
+    .optionlist, .optionlistval{
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+@import "utils/navbar.scss";
+@import "utils/buttons.scss";
+@import "utils/modal.scss";
+
+
+body{
+  transform-style: preserve-3d;
+  perspective: 600px;
+}
+
+//====CONTAINER FOR TEXT WHEN NO POLLS ARE ADDED===========
+.empty{
+  display: block;
+  font-size: 2.3em;
+  margin: 30px 0 30px 30px;
+
+  //====REDIRECT TO ADD POLLS PAGE==========================
+  & + .buttonwrapper{
+    float: left !important;
+    font-size: 1.8em !important;
+    margin: 30px 0 30px 30px;
+  }
+}
+
+//====TO REMOVE THE EMPTY CLASS==============================
+.invisible{
+  display: none !important;
+}
+
+@media(max-width: 480px){
+  .empty{
+    & + .buttonwrapper{
+      float: none;
+      font-size: 1.2em !important;
+      position: relative;
+    }
+  }
+}
+
+//====MAIN BODY OF PAGE=================================
+.user{
+  z-index: 1;
+
+  //====CONTAINS THE POLLS INFO=======================
+  .userpolls{
+    @include nopad;
+    display: block;
+    list-style-type: none;
+    margin: 30px 0 0 0;
+    position: relative;
+  }
+
+  //====WRAPPER OF EVERY BLOCK==========================
+  .onepollwrap{
+    @include nopad;
+    margin: 0 auto;
+    position: relative;
+    width: 95%;
+
+    //====ADD THE BACKGROUND AND RED CARD================
+    &:after, &:before{
+      @include pseudo;
+      background: $charcoal-light;
+      transition: all 0.2s ease-in;
+      z-index: -100;
+    }
+
+    &:after{
+      box-shadow: 6px 4px 3px fade-out(#000, 0.3);
+    }
+
+    &:before{
+      background: $reallydarkred;
+      left: 10px;
+      top: 10px;
+    }
+  }
+
+  //====POLL DIV==================================
+  .onepoll{
+    @include clearfix;
+    display: block;
+    margin: 0 auto;
+    margin-top:35px;
+    position: relative;
+    width: 95%;
+  }
+
+  //====TITLE OF POLL====================================
+  .title{
+    color: #FFF;
+    display: inline-block;
+    float: left;
+    font-size: 1.5em;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+    transition: color 0.2 ease-in;
+
+    &:link, &:active{
+      color: #FFF;
+    }
+
+    &:hover{
+      color: $reallydarkred;
+    }
+  }
+
+  //====CONTAINS SHARE AND DELETE BUTTONS====================
+  .pollbuttons{    
+    display: inline-block;
+    float: right;
+  }
+
+  //====CONTAINS THE BUTTON=================================
+  .buttonwrapper{
+    float: right;
+    font-size: 0.8em;
+    margin-right: 20px;
+  }
+
+}
+
+//==== FOR REMOVING WHATSAPP SHARE BUTTON==================
+.mobilebut{
+  display: none;
+}
+
+//====MOBILE VIEW==========================================
+@media(max-width:700px){
+  .user{
+
+    .title{
+      width: auto;
+    }
+
+    .pollbuttons{
+      width: auto;
+    }
+  }
+}

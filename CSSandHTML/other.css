@@ -1,0 +1,15 @@
+#box {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border: 20px solid black;
+    background-color: red;
+    left: 200px;
+}
+
+p {
+    color: green;
+    background-color: rgb(0, 232, 232);
+    font-size: 20px;
+    opacity: 1;
+}

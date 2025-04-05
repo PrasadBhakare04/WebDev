@@ -1,0 +1,48 @@
+h1 {
+    color: red;
+    background-color: black;
+}
+
+input {
+    color: red;
+}
+
+button {
+    color: white;
+    background-color: black;
+}
+
+/*-------------------------------------------------------------------*/
+input[type="text"] {
+    color: red;
+}
+
+a [href] {
+    color: red;
+}
+
+
+/*-------------------------PSEUDO CLASSES--------------------------------*/
+
+a:hover {
+    color: red;
+}
+
+button:hover {
+    color: red;
+}
+
+button:active {
+    background-color: rgb(29, 252, 0);
+}
+
+
+/*---------------------PSEUDO ELEMENTS----------------------------*/
+
+input::placeholder {
+    color: red;
+}
+
+label::selection {
+    background-color: red;
+}

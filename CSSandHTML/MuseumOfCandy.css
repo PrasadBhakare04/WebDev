@@ -1,0 +1,50 @@
+body {
+    background-color: #f5d9df;
+}
+
+.blurb h2 {
+    color: red;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+
+.blurb p {
+    color: #f498b8;
+    line-height: 2;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#mainNavbar .nav-link {
+    color: white;
+}
+
+#mainNavbar .nav-link:hover {
+    color: red;
+}
+
+#mainNavbar .navbar-brand {
+    color: red;
+}
+
+#HeadingGroup span {
+    color: red;
+}
+
+.navbar.scrolled {
+    background: rgb(222, 192, 222);
+    transition: background 500ms;
+}
+
+@media (max-width:1072px) {
+    #HeadingGroup h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.content {
+    margin-top: 100px;
+}

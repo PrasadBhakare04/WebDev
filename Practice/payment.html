@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Razorpay Payment Gateway Integration</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+    }
+
+    .container {
+      width: 300px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    button {
+      background-color: #2ecc71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Make a Payment</h1>
+    <button id="payButton">Pay Now</button>
+  </div>
+
+  <script>
+    var options = {
+      key: "rzp_test_AXBzvN2fkD4ESK", // Replace with your Razorpay Public Key
+      amount: "50000", // Amount in smallest currency unit (e.g., 100 paise = 1 INR)
+      currency: "INR",
+      name: "Your Company Name",
+      description: "Test Payment",
+      image: "https://example.com/logo.png", // Optional: Your company logo
+      handler: function(response) {
+        alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+        // You can send the payment ID to your backend server for further processing
+      },
+      prefill: {
+        name: "Customer Name",
+        email: "customer@example.com",
+        contact: "9999999999",
+      },
+      notes: {
+        address: "Hello World",
+      },
+      theme: {
+        color: "#3399cc", // Customize the payment button color
+      },
+    };
+
+    var rzp1 = new Razorpay(options);
+
+    // Attach the payment function to the button
+    document.getElementById("payButton").onclick = function(e) {
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>
+</body>
+
+</html>

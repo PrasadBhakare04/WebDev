@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Keeper</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"> -->
+</head>
+
+<body>
+
+    <input type="text" , placeholder="Batting Team Name" , id="battingTeam">
+    <input type="text" , placeholder="Bowling Team Name" , id="bowlingTeam">
+    <button id="ok">Confirm</button>
+
+    <h1 id="selection">Choose Teams for Batting and Bowling</h1>
+    <section>
+        <p>Current Score is
+        <h2 style="display: block;" , id="Score"></h2>
+        <h2 style="display: inline-block;" , id="isFinished">Match Is Yet To Start</h2>
+        </p>
+    </section>
+    <section>
+        <button id="run" , value=1>1</button>
+        <button id="run" , value=2>2</button>
+        <button id="run" , value=3>3</button>
+        <button id="run" , value=4>4</button>
+        <button id="run" , value=6>6</button>
+        <button id="wicket" , value=1>Wicket</button>
+    </section>
+
+    <button id="change">Inning Over</button>
+
+    <section>
+        <h1 id="selection2">Match Is Yet To Start</h1>
+        <section>
+            <p>Current Score is
+            <h2 style="display: block;" , id="Score2"></h2>
+            <h2 style="display: inline-block;" , id="isFinished2"></h2>
+            </p>
+        </section>
+        <section>
+            <button id="run2" , value=1>1</button>
+            <button id="run2" , value=2>2</button>
+            <button id="run2" , value=3>3</button>
+            <button id="run2" , value=4>4</button>
+            <button id="run2" , value=6>6</button>
+            <button id="wicket2" , value=1>Wicket</button>
+        </section>
+    </section>
+
+    <button id="res">RESET</button>
+    <script src="app.js"></script>
+</body>
+
+</html>

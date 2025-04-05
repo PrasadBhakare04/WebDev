@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Page</title>
+</head>
+
+<body>
+    <h1>
+        <%= foundFarm.title %>
+    </h1>
+    <li>
+        <%= foundFarm.city %>
+    </li>
+    <li>
+        <%= foundFarm.email %>
+    </li>
+    <h3>Products</h3>
+    <ul>
+        <% for( let product of foundFarm.products ) { %>
+            <li>
+                <a href="/products/<%= product._id%>">
+                    <%= product.name%>
+                </a>
+            </li>
+            <% } %>
+    </ul>
+    <a href="/farms/index">All farms</a>
+    <a href="/farms/<%= foundFarm._id%>/products/new">Add Products</a>
+    <form action="/farms/<%= foundFarm._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+//====GENERAL CHECKBOX STYLES==========================
+
+//====CONTAINER FOR EXISTING OPTIONS (UL)==============
+.optionlist{
+  @include nopad;
+}
+
+//====iTEMS IN OPTIONLIST(LI)===========================
+.optionlistval{
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+//====LABEL FOR RADIO BUTTONS==========================
+.votelabel{
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  padding: 10px 0px 10px 0px;
+  padding-left: 50px;
+  padding-top: 20px;
+  position: relative;
+  transition: color 0.2s linear;
+  width: 80%;
+}
+
+//====RADIO BUTTON=====================================
+.vote{
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  padding: 10px 0px 10px 0px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  width: 20px;
+  opacity: 0;
+
+  //====STYLING FOR THE RADIO BUTTON===========================
+  & ~ .check {
+    background: $charcoal;
+    border: solid white 2px;
+    border-radius: 50%;
+    display: block;
+    height: 20px;
+    margin: 3px 3px 0px 5px;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    transition: background 0.2s linear;
+    width: 20px;
+    z-index: -1;
+  }
+
+  //====FOR WHEN OPTION IS SELECTED OR HOVERED===========
+  &:checked + label, &:hover + label{
+    color: $reallydarkred;
+  }
+
+  &:checked ~ .check, &:hover ~ .check{
+    background: #FFF;
+  }
+
+  &:focus{
+    outline: none;
+  }
+}

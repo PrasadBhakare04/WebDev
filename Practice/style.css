@@ -1,0 +1,19 @@
+/* p {
+    color: red;
+}
+
+.para {
+    color: green;
+} */
+
+#p1 {
+    color: blue;
+}
+
+#od {
+    padding: 0px 0px 1px 1px;
+    border: black 3px dotted;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

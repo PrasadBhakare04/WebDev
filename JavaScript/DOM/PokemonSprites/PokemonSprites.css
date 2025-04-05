@@ -1,0 +1,8 @@
+.newDiv {
+    display: inline-block;
+    text-align: center;
+}
+
+.newDiv img {
+    display: block;
+}

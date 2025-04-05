@@ -1,0 +1,38 @@
+div:nth-of-type(even) {
+    width: 200px;
+    color: white;
+    background-color: red;
+    border: black solid 2px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+div:nth-of-type(odd) {
+    width: 200px;
+    color: black;
+    background-color: yellow;
+    border: black solid 2px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+div:nth-of-type(1) {
+    transform-origin: bottom left;
+    /*used to set the reference point*/
+    transform: rotate(20deg);
+    /*this is used to rotate from centre*/
+}
+
+div:nth-of-type(2) {
+    transform: scale(3, 1);
+    /*used to make elements small and big*/
+}
+
+div:nth-of-type(3) {
+    transform: translateX(40px);
+    /*used to move elements left right up down*/
+}
+
+div:nth-of-type(4) {
+    transform: skewX(20deg);
+}
