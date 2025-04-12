@@ -1,6 +1,6 @@
 import { useState } from "react"
 import {v4 as uuid} from "uuid"
-import ShoppingListForm from "./ShoppingListForm"
+import ShoppingListFormValidation from "./ShoppingListFormValidation"
 export default function ShoppingListItem(){
     const[list, setList] = useState([
         {product : "banana", qty : 2, id : uuid()},
@@ -26,6 +26,6 @@ export default function ShoppingListItem(){
                 })
             }
         </ul>
-        <ShoppingListForm func={getItem}/>
+        <ShoppingListFormValidation func={getItem}/>
     </>
 }
