@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+.shoppingform{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shoppingform button{
+  padding : 1em;
+  background-color: aqua;
+  border : aqua;
+  border-radius: 0.2em;
+  margin: 1em;
+  font-size: 1em;
+}
+
+.shoppingform input {
+  padding: 1em;
+  margin: 1em;
+}
+
+body{
+  font-family: SF Pro Display;
+  color : teal
+}
