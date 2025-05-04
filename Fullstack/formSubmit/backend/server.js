@@ -18,7 +18,7 @@ app.post('/', async(req, res) => {
     console.log(req.body);
     const newUser = await new User(req.body);
     await newUser.save();
-    res.send("submitted the form data")
+    res.send("Submitted the form data")
 })
 
 app.listen(3000, () => {
